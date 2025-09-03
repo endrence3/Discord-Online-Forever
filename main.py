@@ -10,10 +10,10 @@ from keep_alive import keep_alive
 
 init(autoreset=True)
 
-status = "online"  # online/dnd/idle
-custom_status = "youtube.com/@SealedSaucer"  # Custom Status
+status = os.getenv("DISCORD_STATUS")  # online/dnd/idle
+custom_status = os.getenv("DISCORD_CUSTOM_STATUS")  # Custom Status
 
-usertoken = os.getenv("TOKEN")
+usertoken = os.getenv("DISCORD_TOKEN")
 if not usertoken:
     print(f"{Fore.WHITE}[{Fore.RED}-{Fore.WHITE}] Please add a token inside Secrets.")
     sys.exit()
